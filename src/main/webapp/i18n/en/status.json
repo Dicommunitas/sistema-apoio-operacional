@@ -1,0 +1,32 @@
+{
+  "sistemaApoioOperacionalApp": {
+    "status": {
+      "home": {
+        "title": "Statuses",
+        "createLabel": "Create a new Status",
+        "createOrEditLabel": "Create or edit a Status",
+        "search": "Search for Status",
+        "notFound": "No Statuses found"
+      },
+      "created": "A new Status is created with identifier {{ param }}",
+      "updated": "A Status is updated with identifier {{ param }}",
+      "deleted": "A Status is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Status {{ id }}?"
+      },
+      "detail": {
+        "title": "Status"
+      },
+      "descricao": "Descricao",
+      "prazo": "Prazo",
+      "solicitarFinalizacao": "Solicitar Finalizacao",
+      "responsavel1": "Responsavel 1",
+      "responsavel2": "Responsavel 2",
+      "problema": "Problema",
+      "help": {
+        "descricao": "Atributo descrição.",
+        "prazo": "Atributo prazo deve ser do mesmo tipo de createdAt e updetedAt."
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tipoFinalidadeAmostra">
+            <h2><span jhiTranslate="sistemaApoioOperacionalApp.tipoFinalidadeAmostra.detail.title">Tipo Finalidade Amostra</span> {{ tipoFinalidadeAmostra.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.tipoFinalidadeAmostra.descricao" [ngbTooltip]="'sistemaApoioOperacionalApp.tipoFinalidadeAmostra.help.descricao' | translate">Descricao</span></dt>
+                <dd>
+                    <span>{{ tipoFinalidadeAmostra.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.tipoFinalidadeAmostra.tipoFinalidadeAmostra">Tipo Finalidade Amostra</span></dt>
+                <dd>
+                    <div *ngIf="tipoFinalidadeAmostra.tipoFinalidadeAmostra">
+                        <a [routerLink]="['/finalidade-amostra', tipoFinalidadeAmostra.tipoFinalidadeAmostra?.id, 'view']">{{ tipoFinalidadeAmostra.tipoFinalidadeAmostra?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tipo-finalidade-amostra', tipoFinalidadeAmostra.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
