@@ -1,0 +1,35 @@
+{
+  "name": "OrigemAmostra",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "javadoc": "Atributo descrição.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "amostra",
+      "otherEntityRelationshipName": "origemAmostra",
+      "javadoc": "Um relacionamento",
+      "relationshipName": "origemAmostra",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210326055753",
+  "javadoc": "Entidade OrigemAmostra.\\n@author Diego.",
+  "entityTableName": "origem_amostra",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
