@@ -1,0 +1,26 @@
+{
+  "name": "OrigemAmostra",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "javadoc": "Atributo descrição.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210326072801",
+  "javadoc": "Entidade OrigemAmostra.\\n@author Diego.",
+  "entityTableName": "origem_amostra",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

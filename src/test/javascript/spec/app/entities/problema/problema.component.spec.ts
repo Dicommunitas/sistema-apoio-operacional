@@ -1,0 +1,49 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { of } from 'rxjs';
+import { HttpHeaders, HttpResponse } from '@angular/common/http';
+
+import { SistemaApoioOperacionalTestModule } from '../../../test.module';
+import { ProblemaComponent } from 'app/entities/problema/problema.component';
+import { ProblemaService } from 'app/entities/problema/problema.service';
+import { Problema } from 'app/shared/model/problema.model';
+
+describe('Component Tests', () => {
+  describe('Problema Management Component', () => {
+    let comp: ProblemaComponent;
+    let fixture: ComponentFixture<ProblemaComponent>;
+    let service: ProblemaService;
+
+    beforeEach(() => {
+      TestBed.configureTestingModule({
+        imports: [SistemaApoioOperacionalTestModule],
+        declarations: [ProblemaComponent],
+      })
+        .overrideTemplate(ProblemaComponent, '')
+        .compileComponents();
+
+      fixture = TestBed.createComponent(ProblemaComponent);
+      comp = fixture.componentInstance;
+      service = fixture.debugElement.injector.get(ProblemaService);
+    });
+
+    it('Should call load all on init', () => {
+      // GIVEN
+      const headers = new HttpHeaders().append('link', 'link;link');
+      spyOn(service, 'query').and.returnValue(
+        of(
+          new HttpResponse({
+            body: [new Problema(123)],
+            headers,
+          })
+        )
+      );
+
+      // WHEN
+      comp.ngOnInit();
+
+      // THEN
+      expect(service.query).toHaveBeenCalled();
+      expect(comp.problemas && comp.problemas[0]).toEqual(jasmine.objectContaining({ id: 123 }));
+    });
+  });
+});

@@ -1,0 +1,39 @@
+{
+  "name": "Amostra",
+  "fields": [
+    {
+      "fieldName": "dataHora",
+      "fieldType": "Instant",
+      "javadoc": "Atributo dataHora.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "observacao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identificacaoOutroSistema",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amostraNoLaboratorio",
+      "fieldType": "SimNao",
+      "fieldValues": "SIM,NAO"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210326072601",
+  "javadoc": "Entidade Amostra.\\n@author Diego.",
+  "entityTableName": "amostra",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

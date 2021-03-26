@@ -1,0 +1,29 @@
+{
+  "sistemaApoioOperacionalApp": {
+    "problema": {
+      "home": {
+        "title": "Problemas",
+        "createLabel": "Criar novo Problema",
+        "createOrEditLabel": "Criar ou editar Problema",
+        "search": "Pesquisar por Problema",
+        "notFound": "Nenhum Problema encontrado"
+      },
+      "created": "Um novo Problema foi criado com o identificador {{ param }}",
+      "updated": "Um Problema foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Problema foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Problema {{ id }}?"
+      },
+      "detail": {
+        "title": "Problema"
+      },
+      "descricao": "Descricao",
+      "criticidade": "Criticidade",
+      "aceitarFinalizacao": "Aceitar Finalizacao",
+      "foto": "Foto",
+      "help": {
+        "descricao": "Atributo descrição."
+      }
+    }
+  }
+}

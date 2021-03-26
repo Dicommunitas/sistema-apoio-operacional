@@ -1,0 +1,26 @@
+{
+  "name": "TipoAmostra",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "javadoc": "Atributo descrição.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210326072901",
+  "javadoc": "Entidade TipoAmostra.\\n@author Diego.",
+  "entityTableName": "tipo_amostra",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
