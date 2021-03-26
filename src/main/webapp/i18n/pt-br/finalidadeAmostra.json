@@ -1,0 +1,27 @@
+{
+  "sistemaApoioOperacionalApp": {
+    "finalidadeAmostra": {
+      "home": {
+        "title": "Finalidade Amostras",
+        "createLabel": "Criar novo Finalidade Amostra",
+        "createOrEditLabel": "Criar ou editar Finalidade Amostra",
+        "search": "Pesquisar por Finalidade Amostra",
+        "notFound": "Nenhum Finalidade Amostra encontrado"
+      },
+      "created": "Um novo Finalidade Amostra foi criado com o identificador {{ param }}",
+      "updated": "Um Finalidade Amostra foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Finalidade Amostra foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Finalidade Amostra {{ id }}?"
+      },
+      "detail": {
+        "title": "Finalidade Amostra"
+      },
+      "lacre": "Lacre",
+      "tipoFinalidadeAmostra": "Tipo Finalidade Amostra",
+      "help": {
+        "lacre": "Atributo lacre."
+      }
+    }
+  }
+}

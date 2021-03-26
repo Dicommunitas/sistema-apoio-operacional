@@ -50,6 +50,19 @@ public class CacheConfiguration {
             createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.User.class.getName());
             createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.Authority.class.getName());
             createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.User.class.getName() + ".authorities");
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.Problema.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.Problema.class.getName() + ".statuses");
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.Status.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.Relatorio.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.TipoRelatorio.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.TipoRelatorio.class.getName() + ".relatorios");
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.Amostra.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.Operacao.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.OrigemAmostra.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.TipoAmostra.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.FinalidadeAmostra.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.TipoFinalidadeAmostra.class.getName());
+            createCache(cm, br.com.transpetro.sistema_apoio_operacional.domain.TipoFinalidadeAmostra.class.getName() + ".finalidadeAmostras");
             // jhipster-needle-ehcache-add-entry
         };
     }

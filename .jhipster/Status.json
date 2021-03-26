@@ -1,0 +1,48 @@
+{
+  "name": "Status",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "byte[]",
+      "javadoc": "Atributo descrição.",
+      "fieldTypeBlobContent": "text",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "prazo",
+      "fieldType": "Instant",
+      "javadoc": "Atributo prazo deve ser do mesmo tipo de createdAt e updetedAt.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "solicitarFinalizacao",
+      "fieldType": "SimNao",
+      "fieldValues": "NAO,SIM"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "problema",
+      "otherEntityRelationshipName": "status",
+      "relationshipName": "problema",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210326092931",
+  "javadoc": "Entidade Status.\\n@author Diego.",
+  "entityTableName": "status",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

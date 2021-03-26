@@ -1,0 +1,33 @@
+{
+  "name": "TipoRelatorio",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "javadoc": "Atributo descrição.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "relatorio",
+      "otherEntityRelationshipName": "tipoRelatorio",
+      "relationshipName": "relatorios"
+    }
+  ],
+  "changelogDate": "20210326093131",
+  "javadoc": "Entidade TipoRelatorio.\\n@author Diego.",
+  "entityTableName": "tipo_relatorio",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

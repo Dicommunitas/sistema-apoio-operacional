@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-problema-heading" jhiTranslate="sistemaApoioOperacionalApp.problema.home.createOrEditLabel">Create or edit a Problema</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sistemaApoioOperacionalApp.problema.descricao" for="field_descricao" [ngbTooltip]="'sistemaApoioOperacionalApp.problema.help.descricao' | translate">Descricao</label>
+                    <textarea class="form-control" name="descricao" id="field_descricao"
+                              formControlName="descricao"></textarea>
+                    <div *ngIf="editForm.get('descricao')!.invalid && (editForm.get('descricao')!.dirty || editForm.get('descricao')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('descricao')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sistemaApoioOperacionalApp.problema.criticidade" for="field_criticidade">Criticidade</label>
+                    <select class="form-control" name="criticidade" formControlName="criticidade" id="field_criticidade">
+                        <option value="BAIXA">{{ 'sistemaApoioOperacionalApp.Criticidade.BAIXA' | translate }}</option>
+                        <option value="MEDIA">{{ 'sistemaApoioOperacionalApp.Criticidade.MEDIA' | translate }}</option>
+                        <option value="ALTA">{{ 'sistemaApoioOperacionalApp.Criticidade.ALTA' | translate }}</option>
+                        <option value="URGENTE">{{ 'sistemaApoioOperacionalApp.Criticidade.URGENTE' | translate }}</option>
+                    </select>
+                    <div *ngIf="editForm.get('criticidade')!.invalid && (editForm.get('criticidade')!.dirty || editForm.get('criticidade')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('criticidade')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sistemaApoioOperacionalApp.problema.aceitarFinalizacao" for="field_aceitarFinalizacao">Aceitar Finalizacao</label>
+                    <select class="form-control" name="aceitarFinalizacao" formControlName="aceitarFinalizacao" id="field_aceitarFinalizacao">
+                        <option value="NAO">{{ 'sistemaApoioOperacionalApp.SimNao.NAO' | translate }}</option>
+                        <option value="SIM">{{ 'sistemaApoioOperacionalApp.SimNao.SIM' | translate }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="sistemaApoioOperacionalApp.problema.foto" for="field_foto">Foto</label>
+                    <div>
+                        <img [src]="'data:' + editForm.get('fotoContentType')!.value + ';base64,' + editForm.get('foto')!.value" style="max-height: 100px;" *ngIf="editForm.get('foto')!.value" alt="problema image"/>
+                        <div *ngIf="editForm.get('foto')!.value" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{ editForm.get('fotoContentType')!.value }}, {{ byteSize(editForm.get('foto')!.value) }}</span>
+                            <button type="button" (click)="clearInputImage('foto', 'fotoContentType', 'file_foto')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_foto" (change)="setFileData($event, 'foto', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="foto" id="field_foto"
+                           formControlName="foto"/>
+                    <input type="hidden" class="form-control" name="fotoContentType" id="field_fotoContentType"
+                           formControlName="fotoContentType" />
+                    <div *ngIf="editForm.get('foto')!.invalid && (editForm.get('foto')!.dirty || editForm.get('foto')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('foto')?.errors?.maxbytes" jhiTranslate="entity.validation.maxbytes" [translateValues]="{ max: 500 }">
+                            This field cannot be more than 500.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

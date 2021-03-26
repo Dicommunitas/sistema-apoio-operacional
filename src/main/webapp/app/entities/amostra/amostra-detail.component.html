@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="amostra">
+            <h2><span jhiTranslate="sistemaApoioOperacionalApp.amostra.detail.title">Amostra</span> {{ amostra.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.dataHora" [ngbTooltip]="'sistemaApoioOperacionalApp.amostra.help.dataHora' | translate">Data Hora</span></dt>
+                <dd>
+                    <span>{{ amostra.dataHora }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.observacao">Observacao</span></dt>
+                <dd>
+                    <span>{{ amostra.observacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.identificacaoOutroSistema">Identificacao Outro Sistema</span></dt>
+                <dd>
+                    <span>{{ amostra.identificacaoOutroSistema }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.amostraNoLaboratorio">Amostra No Laboratorio</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'sistemaApoioOperacionalApp.SimNao.' + amostra.amostraNoLaboratorio }}">{{ amostra.amostraNoLaboratorio }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/amostra', amostra.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
