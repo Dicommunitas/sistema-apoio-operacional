@@ -1,0 +1,28 @@
+{
+  "sistemaApoioOperacionalApp": {
+    "origemAmostra": {
+      "home": {
+        "title": "Origem Amostras",
+        "createLabel": "Criar novo Origem Amostra",
+        "createOrEditLabel": "Criar ou editar Origem Amostra",
+        "search": "Pesquisar por Origem Amostra",
+        "notFound": "Nenhum Origem Amostra encontrado"
+      },
+      "created": "Um novo Origem Amostra foi criado com o identificador {{ param }}",
+      "updated": "Um Origem Amostra foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Origem Amostra foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Origem Amostra {{ id }}?"
+      },
+      "detail": {
+        "title": "Origem Amostra"
+      },
+      "descricao": "Descricao",
+      "origemAmostra": "Origem Amostra",
+      "amostra": "Amostra",
+      "help": {
+        "descricao": "Atributo descrição."
+      }
+    }
+  }
+}

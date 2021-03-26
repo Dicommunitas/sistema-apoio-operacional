@@ -1,0 +1,28 @@
+{
+  "sistemaApoioOperacionalApp": {
+    "tipoFinalidadeAmostra": {
+      "home": {
+        "title": "Tipo Finalidade Amostras",
+        "createLabel": "Criar novo Tipo Finalidade Amostra",
+        "createOrEditLabel": "Criar ou editar Tipo Finalidade Amostra",
+        "search": "Pesquisar por Tipo Finalidade Amostra",
+        "notFound": "Nenhum Tipo Finalidade Amostra encontrado"
+      },
+      "created": "Um novo Tipo Finalidade Amostra foi criado com o identificador {{ param }}",
+      "updated": "Um Tipo Finalidade Amostra foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Tipo Finalidade Amostra foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Tipo Finalidade Amostra {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Finalidade Amostra"
+      },
+      "descricao": "Descricao",
+      "tipoFinalidadeAmostra": "Tipo Finalidade Amostra",
+      "finalidadeAmostra": "Finalidade Amostra",
+      "help": {
+        "descricao": "Atributo descrição."
+      }
+    }
+  }
+}

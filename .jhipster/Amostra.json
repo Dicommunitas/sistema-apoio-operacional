@@ -1,0 +1,64 @@
+{
+  "name": "Amostra",
+  "fields": [
+    {
+      "fieldName": "dataHora",
+      "fieldType": "Instant",
+      "javadoc": "Atributo dataHora.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "observacao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "identificacaoOutroSistema",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "amostraNoLaboratorio",
+      "fieldType": "SimNao",
+      "fieldValues": "NAO,SIM"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "operacao",
+      "otherEntityRelationshipName": "amostra",
+      "relationshipName": "amostras"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "origemAmostra",
+      "otherEntityRelationshipName": "amostra",
+      "relationshipName": "amostras"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tipoAmostra",
+      "otherEntityRelationshipName": "amostra",
+      "relationshipName": "amostras"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "finalidadeAmostra",
+      "otherEntityRelationshipName": "amostra",
+      "relationshipName": "amostras"
+    }
+  ],
+  "changelogDate": "20210326085502",
+  "javadoc": "Entidade Amostra.\\n@author Diego.",
+  "entityTableName": "amostra",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

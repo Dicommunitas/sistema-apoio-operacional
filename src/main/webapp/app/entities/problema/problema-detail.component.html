@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="problema">
+            <h2><span jhiTranslate="sistemaApoioOperacionalApp.problema.detail.title">Problema</span> {{ problema.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.problema.descricao" [ngbTooltip]="'sistemaApoioOperacionalApp.problema.help.descricao' | translate">Descricao</span></dt>
+                <dd>
+                    <span>{{ problema.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.problema.criticidade">Criticidade</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'sistemaApoioOperacionalApp.Criticidade.' + problema.criticidade }}">{{ problema.criticidade }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.problema.aceitarFinalizacao">Aceitar Finalizacao</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'sistemaApoioOperacionalApp.SimNao.' + problema.aceitarFinalizacao }}">{{ problema.aceitarFinalizacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.problema.foto">Foto</span></dt>
+                <dd>
+                    <div *ngIf="problema.foto">
+                        <a (click)="openFile(problema.fotoContentType, problema.foto)">
+                            <img [src]="'data:' + problema.fotoContentType + ';base64,' + problema.foto" style="max-width: 100%;" alt="problema image"/>
+                        </a>
+                        {{ problema.fotoContentType }}, {{ byteSize(problema.foto) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.problema.problema">Problema</span></dt>
+                <dd>
+                    <div *ngIf="problema.problema">
+                        <a [routerLink]="['/status', problema.problema?.id, 'view']">{{ problema.problema?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.problema.status">Status</span></dt>
+                <dd>
+                    <div *ngIf="problema.status">
+                        <a [routerLink]="['/status', problema.status?.id, 'view']">{{ problema.status?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/problema', problema.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

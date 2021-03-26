@@ -1,0 +1,32 @@
+{
+  "sistemaApoioOperacionalApp": {
+    "operacao": {
+      "home": {
+        "title": "Operacaos",
+        "createLabel": "Criar novo Operacao",
+        "createOrEditLabel": "Criar ou editar Operacao",
+        "search": "Pesquisar por Operacao",
+        "notFound": "Nenhum Operacao encontrado"
+      },
+      "created": "Um novo Operacao foi criado com o identificador {{ param }}",
+      "updated": "Um Operacao foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Operacao foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Operacao {{ id }}?"
+      },
+      "detail": {
+        "title": "Operacao"
+      },
+      "descricao": "Descricao",
+      "inicio": "Inicio",
+      "fim": "Fim",
+      "quantidadeAmostras": "Quantidade Amostras",
+      "observacao": "Observacao",
+      "operacao": "Operacao",
+      "amostra": "Amostra",
+      "help": {
+        "descricao": "Atributo descrição."
+      }
+    }
+  }
+}

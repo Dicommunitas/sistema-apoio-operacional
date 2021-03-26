@@ -1,0 +1,64 @@
+{
+  "name": "Problema",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "byte[]",
+      "javadoc": "Atributo descrição.",
+      "fieldTypeBlobContent": "text",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "criticidade",
+      "fieldType": "Criticidade",
+      "fieldValues": "BAIXA,MEDIA,ALTA,URGENTE",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "aceitarFinalizacao",
+      "fieldType": "SimNao",
+      "fieldValues": "NAO,SIM"
+    },
+    {
+      "fieldName": "foto",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image",
+      "fieldValidateRules": [
+        "maxbytes"
+      ],
+      "fieldValidateRulesMaxbytes": "500"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "status",
+      "otherEntityRelationshipName": "problema",
+      "relationshipName": "problema",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "status",
+      "otherEntityRelationshipName": "status",
+      "relationshipName": "status",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210326085002",
+  "javadoc": "Entidade Problema.\\n@author Diego.",
+  "entityTableName": "problema",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

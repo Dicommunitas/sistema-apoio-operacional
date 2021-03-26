@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="operacao">
+            <h2><span jhiTranslate="sistemaApoioOperacionalApp.operacao.detail.title">Operacao</span> {{ operacao.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.operacao.descricao" [ngbTooltip]="'sistemaApoioOperacionalApp.operacao.help.descricao' | translate">Descricao</span></dt>
+                <dd>
+                    <span>{{ operacao.descricao }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.operacao.inicio">Inicio</span></dt>
+                <dd>
+                    <span>{{ operacao.inicio }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.operacao.fim">Fim</span></dt>
+                <dd>
+                    <span>{{ operacao.fim }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.operacao.quantidadeAmostras">Quantidade Amostras</span></dt>
+                <dd>
+                    <span>{{ operacao.quantidadeAmostras }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.operacao.observacao">Observacao</span></dt>
+                <dd>
+                    <span>{{ operacao.observacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.operacao.operacao">Operacao</span></dt>
+                <dd>
+                    <div *ngIf="operacao.operacao">
+                        <a [routerLink]="['/amostra', operacao.operacao?.id, 'view']">{{ operacao.operacao?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.operacao.amostra">Amostra</span></dt>
+                <dd>
+                    <div *ngIf="operacao.amostra">
+                        <a [routerLink]="['/amostra', operacao.amostra?.id, 'view']">{{ operacao.amostra?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/operacao', operacao.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

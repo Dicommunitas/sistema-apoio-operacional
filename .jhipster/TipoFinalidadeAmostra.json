@@ -1,0 +1,41 @@
+{
+  "name": "TipoFinalidadeAmostra",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "javadoc": "Atributo descrição.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "finalidadeAmostra",
+      "otherEntityRelationshipName": "tipoFinalidadeAmostra",
+      "relationshipName": "tipoFinalidadeAmostra",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "finalidadeAmostra",
+      "otherEntityRelationshipName": "finalidadesAmostra",
+      "relationshipName": "finalidadeAmostra",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210326090002",
+  "javadoc": "Entidade TipoFinalidadeAmostra.\\n@author Diego.",
+  "entityTableName": "tipo_finalidade_amostra",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
