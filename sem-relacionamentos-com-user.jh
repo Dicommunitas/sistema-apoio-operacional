@@ -1,0 +1,193 @@
+/**
+ * Entidade Problema.
+ * @author Diego.
+ */
+entity Problema {
+	/**
+	* Atributo descrição.
+	*/
+    descricao TextBlob required,
+    criticidade Criticidade required,
+    aceitarFinalizacao SimNao,
+    foto ImageBlob maxbytes(500)
+    //criadoPor User,
+    //atualizadoPor User,
+    //criadoEm DateTime,
+    //atualizadoEm DateTime
+}
+
+/**
+ * Entidade Status.
+ * @author Diego.
+ */
+entity Status {
+	/**
+	* Atributo descrição.
+	*/
+    descricao TextBlob required,
+	/**
+	* Atributo prazo deve ser do mesmo tipo de createdAt e updetedAt.
+	*/
+    prazo Instant required,
+    solicitarFinalizacao SimNao
+    //criadoPor User,
+    //atualizadoPor User,
+    //criadoEm DateTime,
+    //atualizadoEm DateTime
+}
+
+/**
+ * Entidade Criticidade.
+ * @author Diego.
+ */
+enum Criticidade {
+    BAIXA, MEDIA, ALTA, URGENTE
+}
+
+/**
+ * Entidade SimNao.
+ * @author Diego.
+ */
+enum SimNao {
+    NAO, SIM
+}
+
+/**
+ * Entidade Relatorio.
+ * @author Diego.
+ * Na tela de visualização de um relatório
+ * deve ser mostrado uma lista das operações com fim em branco
+ * ou início em até 12 horas antes da criação do relatório,
+ * uma lista dos problemas com o campo aceitarFinalizacao em falso 
+ * e uma lista das amostras criadas em até 12 horas antes da
+ * criação do relatório.
+ */
+entity Relatorio {
+	/**
+	* Atributo descrição.
+	*/
+    descricao TextBlob required
+    //criadoPor User,
+    //atualizadoPor User,
+    //criadoEm DateTime,
+    //atualizadoEm DateTime
+}
+
+/**
+ * Entidade TipoRelatorio.
+ * @author Diego.
+ */
+entity TipoRelatorio {
+	/**
+	* Atributo descrição.
+	*/
+    descricao String required
+}
+
+entity User {
+}
+
+/**
+ * Entidade Amostra.
+ * @author Diego.
+ */
+entity Amostra {
+	/**
+	* Atributo dataHora.
+	*/
+	dataHora Instant required,
+    observacao String,
+	identificacaoOutroSistema String,
+    amostraNoLaboratorio SimNao
+    //criadoPor User,
+    //atualizadoPor User,
+    //criadoEm DateTime,
+    //atualizadoEm DateTime
+}
+
+/**
+ * Entidade Operação.
+ * @author Diego.
+ */
+entity Operacao {
+	/**
+	* Atributo descrição.
+	*/
+    descricao String required,
+	inicio Instant,
+	fim Instant,
+	quantidadeAmostras Integer required,
+	observacao TextBlob
+    //criadoPor User,
+    //atualizadoPor User,
+    //criadoEm DateTime,
+    //atualizadoEm DateTime
+}
+
+/**
+ * Entidade OrigemAmostra.
+ * @author Diego.
+ */
+entity OrigemAmostra {
+	/**
+	* Atributo descrição.
+	*/
+    descricao String required,
+}
+
+/**
+ * Entidade TipoAmostra.
+ * @author Diego.
+ */
+entity TipoAmostra {
+	/**
+	* Atributo descrição.
+	*/
+    descricao String required,
+}
+
+/**
+ * Entidade FinalidadeAmostra.
+ * @author Diego.
+ */
+entity FinalidadeAmostra {
+	/**
+	* Atributo lacre.
+	*/
+    lacre String required,
+}
+
+/**
+ * Entidade TipoFinalidadeAmostra.
+ * @author Diego.
+ */
+entity TipoFinalidadeAmostra {
+	/**
+	* Atributo descrição.
+	*/
+    descricao String required,
+}
+
+//definindo vários relacionamentos OneToMany com comentários
+relationship OneToMany {
+	Operacao{amostra} to Amostra,
+	OrigemAmostra{amostra} to Amostra,
+	TipoAmostra{amostra} to Amostra,
+	FinalidadeAmostra{amostra} to Amostra,
+	TipoFinalidadeAmostra{finalidadeAmostra} to FinalidadeAmostra,
+	TipoRelatorio{relatorios} to Relatorio,
+	Problema{status} to Status,
+}
+
+// Definir opções de paginação
+paginate Amostra, Operacao, Problema with pagination
+paginate FinalidadeAmostra, Relatorio, Status with infinite-scroll
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl //except Empregado, Trabalho
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
