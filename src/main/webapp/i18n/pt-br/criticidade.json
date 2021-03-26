@@ -1,0 +1,11 @@
+{
+  "sistemaApoioOperacionalApp": {
+    "Criticidade": {
+      "null": "",
+      "BAIXA": "BAIXA",
+      "MEDIA": "MEDIA",
+      "ALTA": "ALTA",
+      "URGENTE": "URGENTE"
+    }
+  }
+}

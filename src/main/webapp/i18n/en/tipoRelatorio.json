@@ -1,0 +1,27 @@
+{
+  "sistemaApoioOperacionalApp": {
+    "tipoRelatorio": {
+      "home": {
+        "title": "Tipo Relatorios",
+        "createLabel": "Create a new Tipo Relatorio",
+        "createOrEditLabel": "Create or edit a Tipo Relatorio",
+        "search": "Search for Tipo Relatorio",
+        "notFound": "No Tipo Relatorios found"
+      },
+      "created": "A new Tipo Relatorio is created with identifier {{ param }}",
+      "updated": "A Tipo Relatorio is updated with identifier {{ param }}",
+      "deleted": "A Tipo Relatorio is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tipo Relatorio {{ id }}?"
+      },
+      "detail": {
+        "title": "Tipo Relatorio"
+      },
+      "descricao": "Descricao",
+      "tipoRelatorio": "Tipo Relatorio",
+      "help": {
+        "descricao": "Atributo descrição."
+      }
+    }
+  }
+}

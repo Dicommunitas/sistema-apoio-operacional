@@ -1,0 +1,59 @@
+{
+  "name": "Status",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "javadoc": "Atributo descrição.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "prazo",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "Atributo prazo deve ser do mesmo tipo de createdAt e updetedAt.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "solicitarFinalizacao",
+      "fieldType": "SimNao",
+      "fieldValues": "SIM,NAO"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "status",
+      "relationshipName": "responsavel1"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "user",
+      "otherEntityRelationshipName": "status",
+      "relationshipName": "responsavel2"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "problema",
+      "otherEntityRelationshipName": "problema",
+      "relationshipName": "problema",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210326073724",
+  "javadoc": "Entidade Status.\\n@author Diego.",
+  "entityTableName": "status",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
