@@ -1,0 +1,54 @@
+{
+  "name": "Operacao",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "javadoc": "Atributo descrição.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "inicio",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "fim",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "quantidadeAmostras",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "observacao",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "amostra",
+      "otherEntityRelationshipName": "operacao",
+      "relationshipName": "amostra",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210326100141",
+  "javadoc": "Entidade Operação.\\n@author Diego.",
+  "entityTableName": "operacao",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
