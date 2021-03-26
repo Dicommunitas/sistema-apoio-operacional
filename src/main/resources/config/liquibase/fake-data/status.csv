@@ -1,0 +1,11 @@
+id;descricao;prazo;solicitar_finalizacao
+1;../fake-data/blob/hipster.txt;2021-03-25T10:54:54;SIM
+2;../fake-data/blob/hipster.txt;2021-03-25T21:43:39;NAO
+3;../fake-data/blob/hipster.txt;2021-03-26T06:13:36;SIM
+4;../fake-data/blob/hipster.txt;2021-03-25T12:25:35;NAO
+5;../fake-data/blob/hipster.txt;2021-03-25T18:07:35;NAO
+6;../fake-data/blob/hipster.txt;2021-03-25T19:57:29;SIM
+7;../fake-data/blob/hipster.txt;2021-03-25T11:49:13;NAO
+8;../fake-data/blob/hipster.txt;2021-03-25T15:22:40;NAO
+9;../fake-data/blob/hipster.txt;2021-03-25T19:06:48;NAO
+10;../fake-data/blob/hipster.txt;2021-03-25T18:05:23;SIM

@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="amostra">
+            <h2><span jhiTranslate="sistemaApoioOperacionalApp.amostra.detail.title">Amostra</span> {{ amostra.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.dataHora" [ngbTooltip]="'sistemaApoioOperacionalApp.amostra.help.dataHora' | translate">Data Hora</span></dt>
+                <dd>
+                    <span>{{ amostra.dataHora }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.observacao">Observacao</span></dt>
+                <dd>
+                    <span>{{ amostra.observacao }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.identificacaoOutroSistema">Identificacao Outro Sistema</span></dt>
+                <dd>
+                    <span>{{ amostra.identificacaoOutroSistema }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.amostraNoLaboratorio">Amostra No Laboratorio</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'sistemaApoioOperacionalApp.SimNao.' + amostra.amostraNoLaboratorio }}">{{ amostra.amostraNoLaboratorio }}</span>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.operacao">Operacao</span></dt>
+                <dd>
+                    <div *ngIf="amostra.operacao">
+                        <a [routerLink]="['/operacao', amostra.operacao?.id, 'view']">{{ amostra.operacao?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.origemAmostra">Origem Amostra</span></dt>
+                <dd>
+                    <div *ngIf="amostra.origemAmostra">
+                        <a [routerLink]="['/origem-amostra', amostra.origemAmostra?.id, 'view']">{{ amostra.origemAmostra?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.tipoAmostra">Tipo Amostra</span></dt>
+                <dd>
+                    <div *ngIf="amostra.tipoAmostra">
+                        <a [routerLink]="['/tipo-amostra', amostra.tipoAmostra?.id, 'view']">{{ amostra.tipoAmostra?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="sistemaApoioOperacionalApp.amostra.finalidadeAmostra">Finalidade Amostra</span></dt>
+                <dd>
+                    <div *ngIf="amostra.finalidadeAmostra">
+                        <a [routerLink]="['/finalidade-amostra', amostra.finalidadeAmostra?.id, 'view']">{{ amostra.finalidadeAmostra?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/amostra', amostra.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

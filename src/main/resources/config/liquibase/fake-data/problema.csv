@@ -1,0 +1,11 @@
+id;descricao;criticidade;aceitar_finalizacao;foto;foto_content_type
+1;../fake-data/blob/hipster.txt;MEDIA;NAO;../fake-data/blob/hipster.png;image/png
+2;../fake-data/blob/hipster.txt;MEDIA;SIM;../fake-data/blob/hipster.png;image/png
+3;../fake-data/blob/hipster.txt;ALTA;NAO;../fake-data/blob/hipster.png;image/png
+4;../fake-data/blob/hipster.txt;URGENTE;SIM;../fake-data/blob/hipster.png;image/png
+5;../fake-data/blob/hipster.txt;BAIXA;NAO;../fake-data/blob/hipster.png;image/png
+6;../fake-data/blob/hipster.txt;ALTA;NAO;../fake-data/blob/hipster.png;image/png
+7;../fake-data/blob/hipster.txt;URGENTE;NAO;../fake-data/blob/hipster.png;image/png
+8;../fake-data/blob/hipster.txt;MEDIA;SIM;../fake-data/blob/hipster.png;image/png
+9;../fake-data/blob/hipster.txt;BAIXA;SIM;../fake-data/blob/hipster.png;image/png
+10;../fake-data/blob/hipster.txt;MEDIA;NAO;../fake-data/blob/hipster.png;image/png

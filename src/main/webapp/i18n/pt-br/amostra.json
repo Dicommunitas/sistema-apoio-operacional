@@ -1,0 +1,33 @@
+{
+  "sistemaApoioOperacionalApp": {
+    "amostra": {
+      "home": {
+        "title": "Amostras",
+        "createLabel": "Criar novo Amostra",
+        "createOrEditLabel": "Criar ou editar Amostra",
+        "search": "Pesquisar por Amostra",
+        "notFound": "Nenhum Amostra encontrado"
+      },
+      "created": "Um novo Amostra foi criado com o identificador {{ param }}",
+      "updated": "Um Amostra foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Amostra foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Amostra {{ id }}?"
+      },
+      "detail": {
+        "title": "Amostra"
+      },
+      "dataHora": "Data Hora",
+      "observacao": "Observacao",
+      "identificacaoOutroSistema": "Identificacao Outro Sistema",
+      "amostraNoLaboratorio": "Amostra No Laboratorio",
+      "operacao": "Operacao",
+      "origemAmostra": "Origem Amostra",
+      "tipoAmostra": "Tipo Amostra",
+      "finalidadeAmostra": "Finalidade Amostra",
+      "help": {
+        "dataHora": "Atributo dataHora."
+      }
+    }
+  }
+}
