@@ -1,0 +1,79 @@
+import { Component, OnInit } from '@angular/core';
+import { HttpResponse } from '@angular/common/http';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+
+import { IFinalidadeAmostra, FinalidadeAmostra } from 'app/shared/model/finalidade-amostra.model';
+import { FinalidadeAmostraService } from './finalidade-amostra.service';
+
+@Component({
+  selector: 'jhi-finalidade-amostra-update',
+  templateUrl: './finalidade-amostra-update.component.html',
+})
+export class FinalidadeAmostraUpdateComponent implements OnInit {
+  isSaving = false;
+
+  editForm = this.fb.group({
+    id: [],
+    lacre: [null, [Validators.required]],
+  });
+
+  constructor(
+    protected finalidadeAmostraService: FinalidadeAmostraService,
+    protected activatedRoute: ActivatedRoute,
+    private fb: FormBuilder
+  ) {}
+
+  ngOnInit(): void {
+    this.activatedRoute.data.subscribe(({ finalidadeAmostra }) => {
+      this.updateForm(finalidadeAmostra);
+    });
+  }
+
+  updateForm(finalidadeAmostra: IFinalidadeAmostra): void {
+    this.editForm.patchValue({
+      id: finalidadeAmostra.id,
+      lacre: finalidadeAmostra.lacre,
+    });
+  }
+
+  previousState(): void {
+    window.history.back();
+  }
+
+  save(): void {
+    this.isSaving = true;
+    const finalidadeAmostra = this.createFromForm();
+    if (finalidadeAmostra.id !== undefined) {
+      this.subscribeToSaveResponse(this.finalidadeAmostraService.update(finalidadeAmostra));
+    } else {
+      this.subscribeToSaveResponse(this.finalidadeAmostraService.create(finalidadeAmostra));
+    }
+  }
+
+  private createFromForm(): IFinalidadeAmostra {
+    return {
+      ...new FinalidadeAmostra(),
+      id: this.editForm.get(['id'])!.value,
+      lacre: this.editForm.get(['lacre'])!.value,
+    };
+  }
+
+  protected subscribeToSaveResponse(result: Observable<HttpResponse<IFinalidadeAmostra>>): void {
+    result.subscribe(
+      () => this.onSaveSuccess(),
+      () => this.onSaveError()
+    );
+  }
+
+  protected onSaveSuccess(): void {
+    this.isSaving = false;
+    this.previousState();
+  }
+
+  protected onSaveError(): void {
+    this.isSaving = false;
+  }
+}

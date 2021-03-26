@@ -1,0 +1,27 @@
+{
+  "name": "Relatorio",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "byte[]",
+      "javadoc": "Atributo descrição.",
+      "fieldTypeBlobContent": "text",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210326072301",
+  "javadoc": "Entidade Relatorio.\\n@author Diego.\\nNa tela de visualização de um relatório\\ndeve ser mostrado uma lista das operações com fim em branco\\nou início em até 12 horas antes da criação do relatório,\\numa lista dos problemas com o campo aceitarFinalizacao em falso\\ne uma lista das amostras criadas em até 12 horas antes da\\ncriação do relatório.",
+  "entityTableName": "relatorio",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

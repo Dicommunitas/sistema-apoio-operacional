@@ -1,0 +1,39 @@
+{
+  "name": "Status",
+  "fields": [
+    {
+      "fieldName": "descricao",
+      "fieldType": "String",
+      "javadoc": "Atributo descrição.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "prazo",
+      "fieldType": "ZonedDateTime",
+      "javadoc": "Atributo prazo deve ser do mesmo tipo de createdAt e updetedAt.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "solicitarFinalizacao",
+      "fieldType": "SimNao",
+      "fieldValues": "SIM,NAO"
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210326072201",
+  "javadoc": "Entidade Status.\\n@author Diego.",
+  "entityTableName": "status",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

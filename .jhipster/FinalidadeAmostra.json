@@ -1,0 +1,26 @@
+{
+  "name": "FinalidadeAmostra",
+  "fields": [
+    {
+      "fieldName": "lacre",
+      "fieldType": "String",
+      "javadoc": "Atributo lacre.",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [],
+  "changelogDate": "20210326073001",
+  "javadoc": "Entidade FinalidadeAmostra.\\n@author Diego.",
+  "entityTableName": "finalidade_amostra",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

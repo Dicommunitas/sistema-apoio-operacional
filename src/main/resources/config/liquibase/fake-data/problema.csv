@@ -1,0 +1,11 @@
+id;descricao;criticidade;aceitar_finalizacao;foto;foto_content_type
+1;Networked Plastic Fish;URGENTE;SIM;../fake-data/blob/hipster.png;image/png
+2;Won;URGENTE;NAO;../fake-data/blob/hipster.png;image/png
+3;Movies;URGENTE;SIM;../fake-data/blob/hipster.png;image/png
+4;Ergonomic Checking Account USB;URGENTE;SIM;../fake-data/blob/hipster.png;image/png
+5;Gloves Buckinghamshire parsing;BAIXA;NAO;../fake-data/blob/hipster.png;image/png
+6;Gloves New Mexico;BAIXA;NAO;../fake-data/blob/hipster.png;image/png
+7;context-sensitive;URGENTE;NAO;../fake-data/blob/hipster.png;image/png
+8;haptic;BAIXA;NAO;../fake-data/blob/hipster.png;image/png
+9;24/365;MEDIA;SIM;../fake-data/blob/hipster.png;image/png
+10;Optimized;ALTA;NAO;../fake-data/blob/hipster.png;image/png
